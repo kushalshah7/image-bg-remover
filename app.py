@@ -4,7 +4,7 @@ from PIL import Image
 import io
 
 # FastAPI backend URL
-API_URL = "https://image-bg-remover-pkl4.onrender.com"
+API_URL = "http://127.0.0.1:8000/remove-bg/"
 
 st.title("Image Background Remover")
 
