@@ -3,6 +3,7 @@ from fastapi.responses import Response
 from rembg import remove
 from PIL import Image
 import io
+import uvicorn
 
 app = FastAPI()
 
@@ -25,3 +26,10 @@ async def remove_background(file: UploadFile = File(...)):
 
     except Exception as e:
         return {"error": str(e)}
+
+@app.get("/")
+def read_root():
+    return {"message": "FastAPI is running on Render"}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
